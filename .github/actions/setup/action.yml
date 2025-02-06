@@ -1,0 +1,21 @@
+name: Setup
+
+inputs:
+  python-version:
+    description: 'Python version'
+    required: true
+    default: '3.10.12'
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python 3.10.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy pydantic
