@@ -1,6 +1,12 @@
 name: Build and execute Python script
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-test:
