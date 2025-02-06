@@ -13,3 +13,11 @@ def return_double(number: int):
 
 def get_double(number: int):
     return number * 2
+
+
+@app.get("/2/{number}")
+def return_double2(number: int):
+    return get_double2(number)
+
+def get_double2(number: int):
+    return number * 2
